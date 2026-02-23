@@ -94,3 +94,75 @@ INFO: Done
 - **INFO**: Business milestones, major operations
 - **WARN**: Recoverable issues
 - **ERROR**: Failures that need attention
+
+---
+
+## Bounded Loops and Timeouts
+
+All loops and waits must have explicit bounds to prevent infinite execution.
+
+### Loops
+
+Always use bounded iteration. Avoid `while True` without exit conditions.
+
+```python
+# BAD: Infinite loop risk
+for item in items:  # if items is unbounded generator
+    process(item)
+
+# GOOD: Bounded iteration
+for i, item in enumerate(items):
+    if i >= MAX_ITEMS:
+        raise ProcessingError(f"Exceeded max items {MAX_ITEMS}")
+    process(item)
+```
+
+When iterating over collections that could be large:
+
+```python
+# GOOD: Explicit bound with range
+MAX_RETRIES = 100
+for attempt in range(MAX_RETRIES):
+    result = attempt_operation()
+    if result.success:
+        break
+else:
+    raise TimeoutError(f"Operation failed after {MAX_RETRIES} attempts")
+```
+
+### Waits and Polling
+
+Always set explicit timeouts for waits and polling operations.
+
+```python
+# BAD: Potentially infinite wait
+while not result.ready():
+    sleep(0.1)
+
+# GOOD: Timeout-bounded wait
+from tenacity import retry, stop_after_attempt, wait_fixed
+
+@retry(stop=stop_after_attempt(30), wait=wait_fixed(1))
+def wait_for_result():
+    result = check_status()
+    if not result.ready():
+        raise RetryError("Not ready yet")
+    return result
+```
+
+```python
+# GOOD: Explicit timeout
+import asyncio
+
+async def wait_for_ready(timeout: float = 30.0):
+    start = time.monotonic()
+    while time.monotonic() - start < timeout:
+        if await check_ready():
+            return True
+        await asyncio.sleep(0.5)
+    raise TimeoutError(f"Operation not ready after {timeout}s")
+```
+
+### Key Principle
+
+If you cannot write `for _ in range(N)` or `timeout=N`, the operation is not safe to run.
