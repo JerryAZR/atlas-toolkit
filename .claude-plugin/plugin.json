@@ -1,0 +1,11 @@
+{
+  "name": "atlas",
+  "description": "Collection of Claude Code skills for structured software development using atomic transition blocks. Provides skills for project specification, architecture elaboration, roadmap planning, feature implementation with TDD, and milestone verification.",
+  "version": "1.0.0",
+  "author": {
+    "name": "JerryAZR"
+  },
+  "homepage": "https://github.com/JerryAZR/atlas-toolkit",
+  "license": "Apache-2.0",
+  "skills": ["./skills/*"]
+}
