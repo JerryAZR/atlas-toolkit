@@ -111,25 +111,13 @@ while result.pending():
     result = check_server()
 
 # GOOD: Explicit bound with range
+MAX_ATTEMPTS = 100
 for attempt in range(MAX_ATTEMPTS):
     result = check_server()
     if not result.pending():
         break
 else:
-    raise TimeoutError(f"Server did not respond after {MAX_ATTEMPTS} attempts")
-```
-
-When iterating over collections that could be large:
-
-```python
-# GOOD: Explicit bound with range
-MAX_RETRIES = 100
-for attempt in range(MAX_RETRIES):
-    result = attempt_operation()
-    if result.success:
-        break
-else:
-    raise TimeoutError(f"Operation failed after {MAX_RETRIES} attempts")
+    raise RuntimeError(f"Server did not respond after {MAX_ATTEMPTS} attempts")
 ```
 
 ### Waits and Polling
@@ -162,7 +150,7 @@ async def wait_for_ready(timeout: float = 30.0):
         if await check_ready():
             return True
         await asyncio.sleep(0.5)
-    raise TimeoutError(f"Operation not ready after {timeout}s")
+    raise RuntimeError(f"Operation not ready after {timeout}s")
 ```
 
 ### Key Principle
