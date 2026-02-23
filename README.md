@@ -7,10 +7,24 @@ A collection of Claude Code skills for structured software development using ato
 ## Overview
 
 This toolkit provides skills for managing the full software development lifecycle:
+
 - Project specification and architecture
 - Roadmap planning and feature management
 - Implementation with TDD discipline
 - Milestone verification
+
+## Installation
+
+```bash
+/plugin marketplace add JerryAZR/atlas-toolkit
+/plugin install atlas@atlas-toolkit
+```
+
+After installation, skills are invoked with the `atlas:` namespace:
+- `/atlas:spec-create`
+- `/atlas:spec-clarify`
+- `/atlas:project-init`
+- etc.
 
 ## Skills
 
@@ -100,26 +114,26 @@ flowchart TD
 
 ### Starting a New Project
 
-1. `/spec-create <project-description>` - Create SPEC.md
-2. `/spec-clarify` - Resolve ambiguities in spec
-3. `/project-init` - Bootstrap project with tech stack
-4. `/arch-elaborate` - Generate architecture
-5. `/roadmap-draft` - Create initial roadmap
-6. `/roadmap-revise` - Refine into atomic blocks
+1. `/atlas:spec-create <project-description>` - Create SPEC.md
+2. `/atlas:spec-clarify` - Resolve ambiguities in spec
+3. `/atlas:project-init` - Bootstrap project with tech stack
+4. `/atlas:arch-elaborate` - Generate architecture
+5. `/atlas:roadmap-draft` - Create initial roadmap
+6. `/atlas:roadmap-revise` - Refine into atomic blocks
 
 ### Adding a Feature
 
-1. `/feature-add <feature-description>` - Add to roadmap
-2. `/feature-implement` - Implement with TDD
+1. `/atlas:feature-add <feature-description>` - Add to roadmap
+2. `/atlas:feature-implement` - Implement with TDD
 3. Repeat until milestone complete
 
 ### Quick Fixes
 
-`/quick-patch <bug-description>` - For trivial fixes (< 30 min)
+`/atlas:quick-patch <bug-description>` - For trivial fixes (< 30 min)
 
 ### Milestone Completion
 
-`/milestone-wrapup [milestone-number]` - Verify and document
+`/atlas:milestone-wrapup [milestone-number]` - Verify and document milestone
 
 ## Atomic Transition Blocks
 
