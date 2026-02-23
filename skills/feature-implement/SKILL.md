@@ -71,7 +71,7 @@ Break the feature into fine-grained todo items following this order:
 - Test hooks (functions that throw NotImplementedError)
 
 ### 3.2 Write Tests
-- Unit tests for new functions
+- Deterministic unit tests for new functions
 - Integration tests for the feature
 - Add more NotImplemented hooks if needed
 
