@@ -101,10 +101,11 @@ Reorganize to limit scope and complexity:
 - Keep tightly-coupled features together
 
 **Coupling criteria:**
-- Same trigger
-- Same state variable
-- Sequential dependency (A must complete before B)
-- Same data structure
+
+Features must ship together if:
+- The system would enter an invalid state if separated
+- The system would soft-lock (no way to progress) if separated
+- The transition cannot be meaningfully observed in isolation
 
 **If a milestone exceeds targets:**
 1. Move low-coupling features to next milestone
