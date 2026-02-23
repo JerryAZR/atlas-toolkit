@@ -1,5 +1,7 @@
 # ATLAS Toolkit
 
+**ATLAS** - Atomic Transition–Led Application System
+
 A collection of Claude Code skills for structured software development using atomic transition blocks.
 
 ## Overview
