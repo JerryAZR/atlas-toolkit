@@ -49,13 +49,14 @@ Analyze the roadmap and create an execution schedule:
 - Identify dependencies between features
 - Group features that can run in parallel
 - Order sequential features correctly
+- **If unsure about dependencies, schedule sequentially**
 
 Example schedule:
 ```
-Wave 1 (sequential): Feature A
-Wave 2 (parallel):   Feature B, C, D
-Wave 3 (parallel):   Feature E, F
-Wave 4 (sequential): Feature G
+Wave 1 (sequential):  1.1 User Authentication
+Wave 2 (parallel):    1.2 Dashboard, 1.3 Settings, 1.4 Profile
+Wave 3 (parallel):    1.5 Notifications, 1.6 Search
+Wave 4 (sequential):  1.7 Export
 ```
 
 ### Step 3: Implement Features
@@ -64,7 +65,7 @@ Run `feature-implement` subagents according to the schedule. Use the same prompt
 
 **Subagent prompt:**
 ```
-Run the feature-implement skill to implement: <feature-name>
+Run the feature-implement skill to implement: <feature-id> - <feature-name>
 
 After completion, report:
 1. What was implemented
