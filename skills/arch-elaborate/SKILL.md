@@ -42,7 +42,7 @@ tech_stack:
   runtime: <Runtime Model or "TBD">
 ---
 
-# <RootNode>
+# <RootNode> (subdivided)
 
 Responsibility: <1-3 sentence high-level ownership>
 
@@ -66,6 +66,8 @@ Responsibility: <what this child owns>
 ...
 ```
 
+**Important:** The root node is ALWAYS subdivided (it has children). Never mark the root as atomic.
+
 ---
 
 ## Step 2: Decompose Recursively
@@ -85,7 +87,7 @@ For each node that needs decomposition:
 
 ## Step 3: Mark Leaves
 
-Add "(atomic)" after leaf node headings:
+Add "(atomic)" after leaf node headings (nodes with no children):
 
 ```markdown
 ## Authentication (atomic)
@@ -100,6 +102,8 @@ For nodes with children, use "(subdivided)" or omit any marker:
 
 ...
 ```
+
+**Critical:** The root node is ALWAYS subdivided. Only leaf nodes (nodes with no children) can be atomic.
 
 ---
 
