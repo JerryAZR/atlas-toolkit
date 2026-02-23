@@ -9,9 +9,18 @@ description: "Complete project setup workflow: project-init â†’ arch-elaborate â
 
 Orchestrate the complete project setup workflow in sequence. Each skill runs in a subagent to keep the main context clean.
 
-**User's Intent:** $ARGUMENTS
+**User's Preference:** $ARGUMENTS
 
-The argument specifies the project description or name.
+## Why Use Subagents?
+
+This is a **meta-skill** - it orchestrates other skills without doing the work itself. Using subagents is critical because:
+
+- **Context preservation**: Keeps the main conversation clean and focused on project management
+- **Token efficiency**: Each subagent has its own bounded context
+- **Parallel execution**: Independent steps can run concurrently
+- **Clear boundaries**: Each subagent has a specific, limited scope
+
+**Never run child skills directly in the main context.** Always use Task tool to spawn subagents.
 
 ## Prerequisites
 
@@ -23,7 +32,7 @@ This skill acts as a project manager, delegating each step to subagents and trac
 
 ### Step 1: Initialize Project
 
-Invoke `project-init` in a subagent with the user's project description.
+Invoke `project-init` in a subagent with the user's preference.
 
 **Subagent prompt:**
 ```
@@ -101,5 +110,5 @@ All steps are sequential - each requires output from the previous:
 ## Next Steps
 
 After project setup is complete:
-- Use `/feature-add` to add features
-- Use `/milestone-implement` to implement a milestone
+- Use `/feature-add` to add features to the roadmap
+- Use `/meta-build <milestone-number>` to implement a complete milestone

@@ -13,6 +13,17 @@ Orchestrate the complete milestone implementation workflow. Reads the roadmap to
 
 The argument specifies the milestone number to implement (e.g., "1" or "milestone 1").
 
+## Why Use Subagents?
+
+This is a **meta-skill** - it orchestrates other skills without doing the work itself. Using subagents is critical because:
+
+- **Context preservation**: Keeps the main conversation clean and focused on project management
+- **Token efficiency**: Each subagent has its own bounded context
+- **Parallel execution**: Independent features can run concurrently
+- **Clear boundaries**: Each subagent has a specific, limited scope
+
+**Never run child skills directly in the main context.** Always use Task tool to spawn subagents.
+
 ## Prerequisites
 
 - ROADMAP.md exists with milestone definitions
@@ -107,5 +118,5 @@ Features with clear dependencies run sequentially. Independent features can run 
 ## Next Steps
 
 After milestone is complete:
-- Use `/milestone-implement` for next milestone
-- Use `/project-setup` for new project
+- Use `/meta-build <next-milestone-number>` for next milestone
+- Use `/meta-setup` for new project
