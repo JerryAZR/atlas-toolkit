@@ -55,7 +55,14 @@ Quickly evaluate if the patch is **trivial** or **non-trivial**:
 
 ## Step 2: Suggest Full Flow
 
-If the patch appears **non-trivial**, suggest the full issue flow:
+Determine if the patch is:
+1. **Non-trivial** → Suggest issue flow
+2. **Missing feature blocks** → Suggest feature-add flow
+3. **Trivial** → Proceed with quick-patch
+
+### If Non-Trivial
+
+Suggest the full issue flow:
 
 ```
 This appears to be a non-trivial change. For better tracking and TDD discipline,
@@ -70,9 +77,31 @@ This provides structured task breakdown and review checkpoints.
 Should I proceed with quick-patch anyway, or use the full flow?
 ```
 
+### If Missing Feature Blocks
+
+If the "bug" involves one or more feature/atomic transition blocks not yet implemented in ROADMAP.md, suggest the roadmap flow:
+
+```
+This appears to be a missing feature rather than a bug. The requested functionality
+involves atomic transition blocks that don't exist in the roadmap yet.
+
+Consider using the roadmap flow:
+
+  /feature-add <feature-description>
+  /feature-implement
+
+This will properly decompose the feature into atomic blocks and add them to the roadmap.
+
+Should I proceed with quick-patch anyway, or use the roadmap flow?
+```
+
+### Decision
+
 **If user insists**: Proceed with quick-patch (respect their choice).
 
-**If user agrees**: Use issue-create → issue-plan → issue-resolve instead.
+**If user agrees**:
+- For non-trivial → Use issue-create → issue-plan → issue-resolve
+- For missing features → Use feature-add → feature-implement
 
 ---
 
@@ -196,4 +225,5 @@ If tests still fail:
 After quick-patch completes:
 - **More changes**: Run quick-patch again for additional fixes
 - **Complex work**: Use issue-create → issue-plan → issue-resolve
+- **Missing features**: Use feature-add → feature-implement
 - **Testing**: Run full test suite to ensure no regressions
