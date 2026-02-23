@@ -35,7 +35,7 @@ Convert each feature into atomic transition blocks:
 
 ```
 Trigger: (required)
-Precondition:
+Precondition: (required)
 State Mutation:
 Persistence Mutation:
 Observable Response:
