@@ -31,6 +31,10 @@ Understand the requested feature by reading SPEC.md and existing ROADMAP.md.
 - How does it interact with existing functionality?
 - What are the user-facing behaviors?
 
+**If ambiguities exist:**
+- Ask user clarifying questions to better understand intent
+- Present 2-3 options per question with clear tradeoff and recommendation for each
+
 ---
 
 ## Step 2: Decompose into Atomic Blocks
