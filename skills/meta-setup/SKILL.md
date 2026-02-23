@@ -17,14 +17,13 @@ This is a **meta-skill** - it orchestrates other skills without doing the work i
 
 - **Context preservation**: Keeps the main conversation clean and focused on project management
 - **Token efficiency**: Each subagent has its own bounded context
-- **Parallel execution**: Independent steps can run concurrently
 - **Clear boundaries**: Each subagent has a specific, limited scope
 
 **Never run child skills directly in the main context.** Always use Task tool to spawn subagents.
 
 ## Prerequisites
 
-- User has a project idea/concept
+- `SPEC.md` exists with no blocking ambiguities
 
 ## Workflow
 
@@ -38,7 +37,7 @@ Invoke `project-init` in a subagent with the user's preference.
 ```
 Run the project-init skill to bootstrap a new project.
 
-Project description: $ARGUMENTS
+Preference: $ARGUMENTS
 
 After completion, report:
 1. What SPEC.md contains (key points)
@@ -111,4 +110,4 @@ All steps are sequential - each requires output from the previous:
 
 After project setup is complete:
 - Use `/feature-add` to add features to the roadmap
-- Use `/meta-build <milestone-number>` to implement a complete milestone
+- Use `/meta-build 1` to start the first milestone

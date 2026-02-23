@@ -42,38 +42,29 @@ First, read ROADMAP.md to identify features under the target milestone.
 - Dependencies between features (if any noted)
 - Completion criteria for the milestone
 
-### Step 2: Analyze Dependencies
+### Step 2: Plan Execution Order
 
-Based on the roadmap analysis, determine feature implementation order:
+Analyze the roadmap and create an execution schedule:
 
-- **Sequential:** Features with dependencies must run in order
-- **Parallelizable:** Independent features can run in parallel
+- Identify dependencies between features
+- Group features that can run in parallel
+- Order sequential features correctly
 
-If unsure about dependencies, schedule sequentially.
+Example schedule:
+```
+Wave 1 (sequential): Feature A
+Wave 2 (parallel):   Feature B, C, D
+Wave 3 (parallel):   Feature E, F
+Wave 4 (sequential): Feature G
+```
 
 ### Step 3: Implement Features
 
-For each feature in the milestone:
-
-**If features are independent (parallelizable):**
-Run multiple `feature-implement` subagents in parallel:
-
-**Subagent prompt (for each parallel feature):**
-```
-Run the feature-implement skill to implement: <feature-name>
-
-After completion, report:
-1. Atomic blocks implemented
-2. Tests added
-3. Files created/modified
-```
-
-**If features have dependencies (sequential):**
-Run each `feature-implement` sequentially:
+Run `feature-implement` subagents according to the schedule. Use the same prompt for all cases - just pass the feature name:
 
 **Subagent prompt:**
 ```
-Run the feature-implement skill to implement the next feature in milestone $ARGUMENTS.
+Run the feature-implement skill to implement: <feature-name>
 
 After completion, report:
 1. What was implemented
@@ -81,7 +72,8 @@ After completion, report:
 3. Files created/modified
 ```
 
-Repeat for each feature in order.
+**Parallel execution:** Spawn multiple subagents for features in the same wave.
+**Sequential execution:** Wait for each subagent to complete before spawning the next.
 
 ### Step 4: Wrap Up Milestone
 
@@ -102,10 +94,9 @@ After completion, report:
 ## Dependencies
 
 1. Read ROADMAP.md → identifies features to implement
-2. feature-implement (each) → needs ROADMAP.md context
-3. milestone-wrapup → needs all features implemented
-
-Features with clear dependencies run sequentially. Independent features can run in parallel (use parallel subagents for efficiency).
+2. Plan execution order → determines parallel/sequential waves
+3. feature-implement (each) → needs ROADMAP.md context
+4. milestone-wrapup → needs all features implemented
 
 ---
 
@@ -119,4 +110,3 @@ Features with clear dependencies run sequentially. Independent features can run 
 
 After milestone is complete:
 - Use `/meta-build <next-milestone-number>` for next milestone
-- Use `/meta-setup` for new project
