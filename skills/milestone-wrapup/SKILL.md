@@ -151,3 +151,13 @@ Document whatever is meaningful — the agent decides what information to includ
 - [ ] Observable features presented to user (Step 5)
 - [ ] User confirmed completion (Step 6)
 - [ ] ROADMAP.md updated (Step 7)
+
+## Next Steps
+
+After milestone wrap up:
+
+### If More Milestones Remain
+- **Action:** Run `feature-implement` to continue with the next milestone's features
+
+### If All Milestones Complete
+- **Action:** Project is complete — no further skills needed

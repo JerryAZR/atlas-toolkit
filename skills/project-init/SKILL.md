@@ -311,7 +311,7 @@ After bootstrapping the project:
 ### On Success
 - The project compiles and runs without errors
 - The placeholder test passes
-- **Action:** Invoke the `milestone-plan-all` skill to plan implementation milestones, then `arch-init` to define the system architecture
+- **Action:** Invoke the `arch-elaborate` skill to define the system architecture
 
 ### On Failure
 - **Logic bugs or syntax errors:**

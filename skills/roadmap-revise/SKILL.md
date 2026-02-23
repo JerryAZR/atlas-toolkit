@@ -181,3 +181,8 @@ Overwrite `ROADMAP.md`:
 - [ ] Each milestone has max 5 features
 - [ ] Tightly-coupled features kept together
 - [ ] ROADMAP.md updated
+
+## Next Steps
+
+After roadmap is revised:
+- **Action:** Invoke the `feature-implement` skill to start implementing the first feature from the roadmap

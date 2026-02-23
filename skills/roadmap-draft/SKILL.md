@@ -116,3 +116,8 @@ Create `ROADMAP.md`:
 - [ ] Each milestone has 3-5 features
 - [ ] Milestone 1 is the skeleton
 - [ ] ROADMAP.md created
+
+## Next Steps
+
+After roadmap is drafted:
+- **Action:** Invoke the `roadmap-revise` skill to transform features into atomic blocks and finalize milestone scope

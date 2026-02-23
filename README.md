@@ -59,7 +59,7 @@ flowchart TD
 
     %% New feature path
     type -->|New feature| add[feature-add]
-    add --> roadmap[ROADMAP.md]
+    add --> roadmap[/ROADMAP.md/]
     roadmap --> impl[feature-implement]
 
     %% Roadmap revision
@@ -73,7 +73,9 @@ flowchart TD
 
     %% Project setup
     type -->|New project| spec[spec-create]
-    spec --> arch[arch-elaborate]
+    spec --> clarify[spec-clarify]
+    clarify --> init[project-init]
+    init --> arch[arch-elaborate]
     arch --> draft[roadmap-draft]
     draft --> revise
 
@@ -88,7 +90,7 @@ flowchart TD
     classDef secondaryOrder fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
 
     class quick,add,impl,wrap primary
-    class spec,arch,draft,revise secondary
+    class spec,clarify,init,arch,draft,revise secondary
     class issueCreate,issuePlan,issueResolve secondaryOrder
 ```
 
@@ -97,9 +99,11 @@ flowchart TD
 ### Starting a New Project
 
 1. `/spec-create <project-description>` - Create SPEC.md
-2. `/arch-elaborate` - Generate architecture
-3. `/roadmap-draft` - Create initial roadmap
-4. `/roadmap-revise` - Refine into atomic blocks
+2. `/spec-clarify` - Resolve ambiguities in spec
+3. `/project-init` - Bootstrap project with tech stack
+4. `/arch-elaborate` - Generate architecture
+5. `/roadmap-draft` - Create initial roadmap
+6. `/roadmap-revise` - Refine into atomic blocks
 
 ### Adding a Feature
 

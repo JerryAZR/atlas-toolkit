@@ -114,3 +114,8 @@ For nodes with children, use "(subdivided)" or omit any marker:
 - [ ] ARCHITECTURE.md created
 - [ ] All leaf nodes marked as atomic
 - [ ] Each node has brief responsibility description
+
+## Next Steps
+
+After architecture is elaborated:
+- **Action:** Invoke the `roadmap-draft` skill to create the implementation roadmap

@@ -152,3 +152,8 @@ Add the feature blocks to ROADMAP.md:
 - [ ] Atomicity enforced (all blocks valid)
 - [ ] Blocks assigned to appropriate milestones
 - [ ] ROADMAP.md updated with new feature blocks
+
+## Next Steps
+
+After feature is added to roadmap:
+- **Action:** Invoke the `feature-implement` skill to implement the newly added feature

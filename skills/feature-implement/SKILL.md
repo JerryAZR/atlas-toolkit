@@ -137,3 +137,14 @@ After implementation succeeds:
 - [ ] Implementation passes tests
 - [ ] Integration verified
 - [ ] ROADMAP.md updated
+
+## Next Steps
+
+After feature is implemented:
+
+### If More Features Remain
+- **Action:** Run `feature-implement` again for the next unchecked feature
+- Or use `feature-add` to add new features to the roadmap
+
+### If All Milestone Features Complete
+- **Action:** Use `milestone-wrapup` skill to verify and document milestone completion
