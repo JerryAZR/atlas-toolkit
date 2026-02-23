@@ -71,6 +71,12 @@ Break the feature into fine-grained todo items following this order:
 - Test hooks (functions that throw NotImplementedError)
 
 ### 3.2 Write Tests
+
+Follow the **Arrange-Act-Assert** pattern:
+1. **Arrange** - Set up deterministic preconditions
+2. **Act** - Perform the action under test
+3. **Assert** - Verify outcome matches expectation
+
 - Deterministic unit tests for new functions
 - Integration tests for the feature
 - Add more NotImplemented hooks if needed
