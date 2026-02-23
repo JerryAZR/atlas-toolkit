@@ -15,16 +15,25 @@ This toolkit provides skills for managing the full software development lifecycl
 
 ## Installation
 
+### In Claude Code
+
 ```bash
 /plugin marketplace add JerryAZR/atlas-toolkit
 /plugin install atlas@atlas-toolkit
 ```
 
-After installation, skills are invoked with the `atlas:` namespace:
-- `/atlas:spec-create`
-- `/atlas:spec-clarify`
-- `/atlas:project-init`
-- etc.
+### From Terminal
+
+```bash
+claude plugin marketplace add JerryAZR/atlas-toolkit
+claude plugin install atlas@atlas-toolkit
+```
+
+After installation, skills are invoked with the `atlas:` namespace.
+
+For example:
+- From Claude Code: `/atlas:spec-create <description>`
+- From Terminal: `claude atlas:spec-create <description>`
 
 ## Skills
 
