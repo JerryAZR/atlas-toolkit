@@ -29,11 +29,11 @@ claude plugin marketplace add JerryAZR/atlas-toolkit
 claude plugin install atlas@atlas-toolkit
 ```
 
-After installation, skills are invoked with the `atlas:` namespace.
+After installation, skills are invoked directly.
 
 For example:
-- From Claude Code: `/atlas:spec-create <description>`
-- From Terminal: `claude atlas:spec-create <description>`
+- From Claude Code: `/spec-create <description>`
+- From Terminal: `claude spec-create <description>`
 
 ## Skills
 
@@ -123,26 +123,26 @@ flowchart TD
 
 ### Starting a New Project
 
-1. `/atlas:spec-create <project-description>` - Create SPEC.md
-2. `/atlas:spec-clarify` - Resolve ambiguities in spec
-3. `/atlas:project-init` - Bootstrap project with tech stack
-4. `/atlas:arch-elaborate` - Generate architecture
-5. `/atlas:roadmap-draft` - Create initial roadmap
-6. `/atlas:roadmap-revise` - Refine into atomic blocks
+1. `/spec-create <project-description>` - Create SPEC.md
+2. `/spec-clarify` - Resolve ambiguities in spec
+3. `/project-init` - Bootstrap project with tech stack
+4. `/arch-elaborate` - Generate architecture
+5. `/roadmap-draft` - Create initial roadmap
+6. `/roadmap-revise` - Refine into atomic blocks
 
 ### Adding a Feature
 
-1. `/atlas:feature-add <feature-description>` - Add to roadmap
-2. `/atlas:feature-implement` - Implement with TDD
+1. `/feature-add <feature-description>` - Add to roadmap
+2. `/feature-implement` - Implement with TDD
 3. Repeat until milestone complete
 
 ### Quick Fixes
 
-`/atlas:quick-patch <bug-description>` - For trivial fixes (< 30 min)
+`/quick-patch <bug-description>` - For trivial fixes (< 30 min)
 
 ### Milestone Completion
 
-`/atlas:milestone-wrapup [milestone-number]` - Verify and document milestone
+`/milestone-wrapup [milestone-number]` - Verify and document milestone
 
 ## Atomic Transition Blocks
 
