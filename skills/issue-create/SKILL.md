@@ -1,13 +1,17 @@
 ---
 name: issue-create
-description: "Creates a feature request or bug report issue document. Use when the user wants to document a new feature request, bug report, or enhancement."
+description: "Creates an off-roadmap issue document for tracking work not intended for ROADMAP.md. Use for bugs discovered during implementation, external requests, or items to be deferred."
 ---
 
 # New Issue
 
 ## Overview
 
-Create a feature request or bug report issue document in the `issues/` directory.
+Create an issue document in the `issues/` directory for tracking work **not intended for the roadmap**.
+
+**When to use this skill vs. feature-add:**
+- **issue-create**: Off-roadmap items (bugs found during work, external requests, deferred items without roadmap integration)
+- **feature-add**: New features intended for ROADMAP.md with atomic block decomposition
 
 **User's Intent:** $ARGUMENTS
 

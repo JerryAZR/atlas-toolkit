@@ -9,7 +9,7 @@ description: "Resolves trivial bugs or implements small features with TDD workfl
 
 Resolve trivial bugs or implement small features using TDD workflow: write failing tests first, then implement to make them pass.
 
-This is a shortcut for quick work. For complex changes that require planning, architecture updates, or multi-session work, use the full issue flow instead.
+This is a shortcut for quick work. For changes that involve new feature blocks not yet on the roadmap, use the feature-add flow instead.
 
 **User's Intent:** $ARGUMENTS
 
@@ -22,8 +22,8 @@ This is a shortcut for quick work. For complex changes that require planning, ar
 
 Follow this process in order:
 
-1. **Assess Complexity** - Determine if patch is trivial or non-trivial
-2. **Suggest Full Flow** - Offer issue-create → issue-plan → issue-resolve for non-trivial
+1. **Assess Complexity** - Determine if patch is trivial or involves missing feature blocks
+2. **Route Appropriately** - Quick-patch for trivial, feature-add for new features
 3. **Create Tests** - Write failing tests covering the bug/feature
 4. **Run Tests** - Verify tests fail (red state)
 5. **Implement Fix** - Write code to make tests pass
@@ -33,57 +33,38 @@ Follow this process in order:
 
 ## Step 1: Assess Complexity
 
-Quickly evaluate if the patch is **trivial** or **non-trivial**:
+Quickly evaluate if the patch is **trivial** or involves **missing feature blocks**:
 
 ### Trivial Indicators
 
 - Single file change
 - Self-contained logic
-- No architecture updates needed
+- No new feature blocks needed
 - Can be tested in isolation
 - Estimated work: < 30 minutes
 
-### Non-Trivial Indicators
+### Missing Feature Blocks
 
-- Requires architectural changes
-- Affects multiple components
-- Needs new test files or test infrastructure
-- Complex integration required
-- Estimated work: > 30 minutes
+- Requires atomic transition blocks not yet in ROADMAP.md
+- New user-facing functionality
+- Needs roadmap integration
 
 ---
 
-## Step 2: Suggest Full Flow
+## Step 2: Route Appropriately
 
-Determine if the patch is:
-1. **Non-trivial** → Suggest issue flow
+Determine the appropriate path:
+
+1. **Trivial** → Proceed with quick-patch (Step 3)
 2. **Missing feature blocks** → Suggest feature-add flow
-3. **Trivial** → Proceed with quick-patch
-
-### If Non-Trivial
-
-Suggest the full issue flow:
-
-```
-This appears to be a non-trivial change. For better tracking and TDD discipline,
-consider using the full issue flow:
-
-  /issue-create <description>
-  /issue-plan
-  /issue-resolve
-
-This provides structured task breakdown and review checkpoints.
-
-Should I proceed with quick-patch anyway, or use the full flow?
-```
 
 ### If Missing Feature Blocks
 
-If the "bug" involves one or more feature/atomic transition blocks not yet implemented in ROADMAP.md, suggest the roadmap flow:
+If the change involves atomic transition blocks not yet implemented in ROADMAP.md:
 
 ```
-This appears to be a missing feature rather than a bug. The requested functionality
-involves atomic transition blocks that don't exist in the roadmap yet.
+This appears to involve feature blocks not yet on the roadmap. The requested functionality
+requires atomic transition blocks that don't exist in ROADMAP.md yet.
 
 Consider using the roadmap flow:
 
@@ -95,13 +76,9 @@ This will properly decompose the feature into atomic blocks and add them to the 
 Should I proceed with quick-patch anyway, or use the roadmap flow?
 ```
 
-### Decision
-
 **If user insists**: Proceed with quick-patch (respect their choice).
 
-**If user agrees**:
-- For non-trivial → Use issue-create → issue-plan → issue-resolve
-- For missing features → Use feature-add → feature-implement
+**If user agrees**: Use feature-add → feature-implement
 
 ---
 
@@ -213,7 +190,7 @@ If tests still fail:
 ## Success Criteria
 
 - [ ] Complexity assessed
-- [ ] Full flow suggested for non-trivial (if applicable)
+- [ ] Feature-add suggested if missing feature blocks (if applicable)
 - [ ] User choice respected
 - [ ] Failing tests created
 - [ ] Tests verified to fail (red state)
@@ -224,6 +201,5 @@ If tests still fail:
 
 After quick-patch completes:
 - **More changes**: Run quick-patch again for additional fixes
-- **Complex work**: Use issue-create → issue-plan → issue-resolve
 - **Missing features**: Use feature-add → feature-implement
 - **Testing**: Run full test suite to ensure no regressions
