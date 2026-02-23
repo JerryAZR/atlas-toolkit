@@ -89,7 +89,7 @@ Perform reasoning-based review for integration completeness:
 **If issues found:**
 - Report what is missing
 - Do NOT proceed to Phase 2
-- If the underlying feature blocks already exist but are not wired correctly → use `quick-fix` skill
+- If the underlying feature blocks already exist but are not wired correctly → use `quick-patch` skill
 - If missing feature blocks → add them to ROADMAP.md and use `feature-implement` skill
 
 ---
@@ -119,7 +119,7 @@ Wait for user to respond before proceeding.
 
 **If user reports issues:**
 - Do NOT proceed to documentation
-- If the issue is wiring/connection → use `quick-fix` skill
+- If the issue is wiring/connection → use `quick-patch` skill
 - If the issue is missing functionality → add to ROADMAP.md and use `feature-implement` skill
 
 **If user confirms:**

@@ -83,6 +83,7 @@ Break the feature into fine-grained todo items following this order:
 ### 3.4 Implement
 - Write implementation to make tests pass
 - Fix tests if needed, but DO NOT weaken tests
+- Follow [coding_guidelines.md](references/coding_guidelines.md) for logging and fail-fast design
 
 ### 3.5 Integration Review
 - Verify feature integrates with system
@@ -127,6 +128,7 @@ After implementation succeeds:
 - Do not weaken tests to make them pass
 - Keep implementation scoped to the feature
 - Update ROADMAP.md when complete
+- Follow coding guidelines: aggressive logging, fail-fast (no silent fallbacks)
 
 ## Success Criteria
 
