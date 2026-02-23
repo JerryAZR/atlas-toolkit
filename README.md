@@ -1,6 +1,6 @@
-# Yet Another Toolkit
+# ATLAS Toolkit
 
-A collection of Claude Code skills for structured software development.
+A collection of Claude Code skills for structured software development using atomic transition blocks.
 
 ## Overview
 
