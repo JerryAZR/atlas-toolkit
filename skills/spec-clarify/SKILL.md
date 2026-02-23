@@ -66,16 +66,16 @@ Find and read the target spec file:
 - If no argument: read `SPEC.md` in project root
 - Ask user if location is unclear
 
-### 2.5. Explore Project Context
+### 3. Explore Project Context
 
 Before diving into ambiguities, briefly understand the current state:
 - Read README.md at project root
-- Read the target spec file (as identified in Section 2)
+- Read the target spec file (as identified in Section 3)
 - If user provided a secondary spec: cross-reference with main SPEC.md for context
 
 Do NOT explore the full project codebase -- stay focused on the spec.
 
-### 3. Scan for Ambiguities
+### 4. Scan for Ambiguities
 
 Review the spec against this coverage taxonomy. Mark each category as **Clear**, **Partial**, or **Missing**:
 
@@ -89,7 +89,7 @@ Review the spec against this coverage taxonomy. Mark each category as **Clear**,
 | **Constraints** | Technical, timeline, compliance, integrations |
 | **Terminology** | Clear definitions, consistent usage |
 
-### 4. Prioritize Questions
+### 5. Prioritize Questions
 
 Only ask questions that meet ALL criteria:
 1. Answer would materially change architecture, scope, or roadmap
@@ -104,7 +104,7 @@ Only ask questions that meet ALL criteria:
 - **Exception:** Follow-up questions on the same ambiguity may ignore the 5/10 limit -- they are clarifying a single topic, not adding new ones
 - **Critical blocking ambiguities** (scope, data model, permissions) may exceed the 10 total limit if needed to unblock development
 
-### 5. Ask One Question at a Time
+### 6. Ask One Question at a Time
 
 **Simple questions with follow-ups over complex questions:**
 - Break complex ambiguities into multiple simple questions
@@ -140,7 +140,7 @@ Suggested: [Proposed answer] - [brief reasoning]
 Please answer in a few words or say "yes" to accept.
 ```
 
-### 6. Integrate Answers Inline
+### 7. Integrate Answers Inline
 
 After each answer, update the **target spec file in place** (not just append):
 
@@ -155,7 +155,7 @@ After each answer, update the **target spec file in place** (not just append):
 - If user gave a direct clarification in arguments, document it regardless of triviality
 - Only create a "Clarifications" appendix if inline update would be awkward
 
-### 7. Present Updated Spec
+### 8. Present Updated Spec
 
 After resolving questions:
 - Show the spec with changes highlighted

@@ -1,6 +1,6 @@
 ---
 name: roadmap-draft
-description: "Drafts implementation roadmap by ordering features into milestones. Use when a project needs to be broken down into manageable implementation phases."
+description: "Drafts implementation roadmap by ordering features into milestones. Use when a project needs to be broken down into manageable implementation phases, during project setup after ARCHITECTURE.md is created, or when planning implementation milestones from SPEC.md."
 ---
 
 # Roadmap Draft

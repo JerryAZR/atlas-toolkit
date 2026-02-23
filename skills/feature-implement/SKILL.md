@@ -1,6 +1,6 @@
 ---
 name: feature-implement
-description: "Implements a feature from the roadmap using test-first development. Use when you need to add new functionality following a disciplined implementation workflow."
+description: "Implements a feature from the roadmap using test-first development. Use when implementing roadmap features, during feature development, or when the user asks to implement a specific feature from ROADMAP.md."
 ---
 
 # Feature Implement
