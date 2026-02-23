@@ -106,15 +106,17 @@ All loops and waits must have explicit bounds to prevent infinite execution.
 Always use bounded iteration. Avoid `while True` without exit conditions.
 
 ```python
-# BAD: Infinite loop risk
-for item in items:  # if items is unbounded generator
-    process(item)
+# BAD: Unbounded while - no exit guarantee
+while result.pending():
+    result = check_server()
 
-# GOOD: Bounded iteration
-for i, item in enumerate(items):
-    if i >= MAX_ITEMS:
-        raise ProcessingError(f"Exceeded max items {MAX_ITEMS}")
-    process(item)
+# GOOD: Explicit bound with range
+for attempt in range(MAX_ATTEMPTS):
+    result = check_server()
+    if not result.pending():
+        break
+else:
+    raise TimeoutError(f"Server did not respond after {MAX_ATTEMPTS} attempts")
 ```
 
 When iterating over collections that could be large:
