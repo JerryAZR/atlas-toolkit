@@ -44,7 +44,6 @@ For example:
 | [spec-create](skills/spec-create/) | Creates or updates project specifications (SPEC.md) |
 | [spec-clarify](skills/spec-clarify/) | Resolves ambiguous areas in specifications |
 | [project-init](skills/project-init/) | Bootstraps new projects with tech stack selection |
-| [meta-setup](skills/meta-setup/) | Complete setup workflow (init → arch → draft → revise) |
 | [arch-elaborate](skills/arch-elaborate/) | Elaborates architecture tree from SPEC.md |
 | [roadmap-draft](skills/roadmap-draft/) | Drafts implementation roadmap from features |
 | [roadmap-revise](skills/roadmap-revise/) | Transforms features into atomic blocks, restructures milestones |
@@ -61,7 +60,6 @@ For example:
 
 | Skill | Description |
 |-------|-------------|
-| [meta-build](skills/meta-build/) | Complete milestone workflow (implement all features → wrapup) |
 | [milestone-wrapup](skills/milestone-wrapup/) | Verifies milestone completion (self-eval + user presentation) |
 
 ### Off-Roadmap (Second-Order)
@@ -71,6 +69,15 @@ For example:
 | [issue-create](skills/issue-create/) | Creates off-roadmap issue documents |
 | [issue-plan](skills/issue-plan/) | Creates task roadmap for issues |
 | [issue-resolve](skills/issue-resolve/) | Executes issue tasks with batch review |
+
+### Meta-Skills
+
+Meta-skills are orchestration skills that run other skills in sequence or parallel. They keep the main context clean by using subagents.
+
+| Skill | Description |
+|-------|-------------|
+| [meta-setup](skills/meta-setup/) | Complete setup workflow (init → arch → draft → revise) |
+| [meta-build](skills/meta-build/) | Complete milestone workflow (implement all features → wrapup) |
 
 ## Workflow
 
