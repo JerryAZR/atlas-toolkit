@@ -39,7 +39,6 @@ Precondition: (required)
 State Mutation:
 Persistence Mutation:
 Observable Response:
-Invariant Introduced:
 ```
 
 **Required Fields:**
@@ -56,10 +55,7 @@ Answer these questions for each block:
 1. Would the app behave differently after restart? (Y/N)
    → If Yes, include **Persistence Mutation**
 
-2. Does this introduce a rule that must always hold? (Y/N)
-   → If Yes, include **Invariant Introduced**
-
-3. Does this change future decision logic in this runtime? (Y/N)
+2. Does this change future decision logic in this runtime? (Y/N)
    → If Yes, include **State Mutation**
 
 4. Does this affect UI/API output or generate outgoing traffic? (Y/N)
@@ -88,7 +84,6 @@ Compute per milestone:
 - Triggers: X
 - State Variables: Y
 - Persistence Mutations: Z
-- Invariants: N
 - New Data Structures: M
 
 ---
@@ -163,7 +158,6 @@ Overwrite `ROADMAP.md`:
 - Triggers: X
 - State Variables: Y
 - Persistence Mutations: Z
-- Invariants: N
 ```
 
 ---

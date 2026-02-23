@@ -162,6 +162,5 @@ Features are decomposed into atomic blocks with these fields:
 - **State Mutation**: Runtime state changes
 - **Persistence Mutation**: Data changes across restarts
 - **Observable Response**: UI/API output
-- **Invariant Introduced**: Rules that must always hold
 
 This ensures each block has measurable impact and can be tested independently.
