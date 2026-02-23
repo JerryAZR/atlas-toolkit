@@ -1,9 +1,9 @@
 ---
-name: milestone-implement
-description: "Implements all features in a milestone: runs feature-implement for each feature, then milestone-wrapup"
+name: meta-build
+description: "Implements all features in a milestone: runs feature-implement for each feature, then milestone-wrapup. Use when user wants to implement a complete milestone. This is a meta-skill that orchestrates other skills."
 ---
 
-# Milestone Implement
+# Meta Build
 
 ## Overview
 

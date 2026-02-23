@@ -1,9 +1,9 @@
 ---
-name: project-setup
-description: "Complete project setup workflow: project-init → arch-elaborate → roadmap-draft → roadmap-revise"
+name: meta-setup
+description: "Complete project setup workflow: project-init → arch-elaborate → roadmap-draft → roadmap-revise. Use when user wants to set up a complete new project. This is a meta-skill that orchestrates other skills."
 ---
 
-# Project Setup
+# Meta Setup
 
 ## Overview
 
