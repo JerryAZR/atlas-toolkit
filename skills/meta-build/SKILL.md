@@ -90,6 +90,19 @@ After completion, report:
 3. Next milestone (if any)
 ```
 
+### Step 5: Review for Architectural Entropy
+
+After milestone-wrapup completes, invoke `milestone-review` in a subagent to review the changes for architectural entropy and refactor if needed.
+
+**Subagent prompt:**
+```
+Run the milestone-review skill to review the latest milestone changes for architectural entropy increase.
+
+After completion, report:
+1. Review findings
+2. Problems fixed during refactor (if any)
+```
+
 ---
 
 ## Dependencies
@@ -98,6 +111,7 @@ After completion, report:
 2. Plan execution order → determines parallel/sequential waves
 3. feature-implement (each) → needs ROADMAP.md context
 4. milestone-wrapup → needs all features implemented
+5. milestone-review → runs after wrapup to check architectural entropy
 
 ---
 
@@ -106,6 +120,7 @@ After completion, report:
 - [ ] All features in milestone implemented
 - [ ] Tests passing for implemented features
 - [ ] milestone-wrapup completed successfully
+- [ ] milestone-review completed with all severe entropy issues addressed
 
 ## Next Steps
 
